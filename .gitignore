@@ -1,6 +1,7 @@
 # App Specific
 dist
 local.db
+*.env
 
 # Created by .ignore support plugin (hsz.mobi)
 logs
@@ -29,4 +30,4 @@ typings/
 .node_repl_history
 *.tgz
 .yarn-integrity
-.env
+

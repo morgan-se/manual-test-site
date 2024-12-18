@@ -1,0 +1,18 @@
+meta {
+  name: get tests
+  type: http
+  seq: 7
+}
+
+get {
+  url: http://{{BASE_URL}}/projects/{{PROJECT_ID}}/stories/{{STORY_ID}}/tests
+  body: none
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Bruno test",
+    "description": "A test created from a bruno request"
+  }
+}

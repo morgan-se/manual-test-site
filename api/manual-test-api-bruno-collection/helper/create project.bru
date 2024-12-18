@@ -1,0 +1,22 @@
+meta {
+  name: create project
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://{{BASE_URL}}/projects
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "title": "Bruno project",
+    "description": "A project created from a bruno request"
+  }
+}
+
+script:post-response {
+  bru.setEnvVar("PROJECT_ID", res.body.projectId)
+}

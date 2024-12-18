@@ -1,0 +1,68 @@
+{
+  "post_project": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128
+      },
+      "description": {
+        "type": "string",
+        "maxLength": 1024
+      }
+    },
+    "required": [
+      "title",
+      "description"
+    ]
+  },
+  "post_story": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128
+      },
+      "description": {
+        "type": "string",
+        "maxLength": 1024
+      },
+      "storyIdentifier": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 6
+      }
+    },
+    "required": [
+      "title",
+      "description",
+      "storyIdentifier"
+    ]
+  },
+  "post_test": {
+    "type": "object",
+    "properties": {
+      "title": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 128
+      },
+      "description": {
+        "type": "string",
+        "maxLength": 1024
+      },
+      "testIdentifier": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 6
+      }
+    },
+    "required": [
+      "title",
+      "description",
+      "testIdentifier"
+    ]
+  }
+}

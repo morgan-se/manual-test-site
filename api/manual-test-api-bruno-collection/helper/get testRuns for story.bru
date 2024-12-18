@@ -1,0 +1,11 @@
+meta {
+  name: get testRuns for story
+  type: http
+  seq: 10
+}
+
+get {
+  url: http://{{BASE_URL}}/projects/{{PROJECT_ID}}/stories/{{STORY_ID}}/runs
+  body: none
+  auth: none
+}

@@ -1,0 +1,11 @@
+meta {
+  name: get stories
+  type: http
+  seq: 5
+}
+
+get {
+  url: http://{{BASE_URL}}/projects/{{PROJECT_ID}}/stories
+  body: none
+  auth: none
+}

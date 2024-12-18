@@ -1,0 +1,23 @@
+meta {
+  name: create test
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://{{BASE_URL}}/projects/{{PROJECT_ID}}/stories/{{STORY_ID}}/tests
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "testIdentifier": "AC1",
+    "title": "Bruno test",
+    "description": "A test created from a bruno request"
+  }
+}
+
+script:post-response {
+  bru.setEnvVar("TEST_ID", res.body.testId)
+}

@@ -1,0 +1,23 @@
+meta {
+  name: create story
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://{{BASE_URL}}/projects/{{PROJECT_ID}}/stories
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "storyIdentifier": "U1",
+    "title": "Bruno story",
+    "description": "A story created from a bruno request"
+  }
+}
+
+script:post-response {
+  bru.setEnvVar("STORY_ID", res.body.storyId)
+}
