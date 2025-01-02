@@ -15,9 +15,9 @@ function App() {
                 <Route element={<NavHandler/>}>
                     <Route path="/" element={<Navigate to={"/projects"}/>}/>
                     <Route path="/projects" element={<Projects/>} />
-                    <Route path="/projects/:projectId" element={<Stories/>} />
+                    <Route path="/projects/:projectId/stories" element={<Stories/>} />
                     <Route path="/projects/:projectId/stories/:storyId/tests" element={<Tests/>} />
-                    <Route path="/projects/:projectId/stories/:storyId/tests/:testId" element={<TestRuns/>} />
+                    <Route path="/projects/:projectId/stories/:storyId/tests/:testId/testruns" element={<TestRuns/>} />
                 </Route>
             </Routes>
         </Router>

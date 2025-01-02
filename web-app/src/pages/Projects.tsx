@@ -56,7 +56,7 @@ const Projects = () => {
     const projectList = () => {
         if (projects && projects.length > 0) {
             return projects.map((p) => (
-                <TableRow key={p.projectId} onClick={() => navigate(`/projects/${p.projectId}`)} className="table-row-hover">
+                <TableRow key={p.projectId} onClick={() => navigate(`/projects/${p.projectId}/stories`)} className="table-row-hover">
                     <TableCell>{p.title}</TableCell>
                     <TableCell>{p.description}</TableCell>
                     <TableCell><Status status={p.status}/></TableCell>

@@ -83,7 +83,6 @@ const Stories = () => {
     return (
         <>
             <Stack direction="row" spacing={2}>
-                {/* todo: highlight project  name and make it link */}
                 <Typography variant="h3" component="h3">Stories for {project ? project.title : ''}</Typography>
                 <Button onClick={() => {setOpenAddStoryDialog(true)}} startIcon={<AddIcon/>}>
                     Create new story

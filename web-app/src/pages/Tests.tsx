@@ -78,7 +78,7 @@ const Tests = () => {
     const testList = () => {
         if (tests && tests.length > 0) {
             return tests.map((t) => (
-                <TableRow key={t.testId} onClick={() => {navigate(`/projects/${projectId}/stories/${storyId}/tests/${t.testId}`)}} className="table-row-hover">
+                <TableRow key={t.testId} onClick={() => {navigate(`/projects/${projectId}/stories/${storyId}/tests/${t.testId}/testruns`)}} className="table-row-hover">
                     <TableCell>{t.testIdentifier}</TableCell>
                     <TableCell>{t.title}</TableCell>
                     <TableCell>{t.description}</TableCell>
@@ -95,7 +95,7 @@ const Tests = () => {
         <>
             <Stack direction="row" spacing={2}>
                 {/* todo: highlight project and story name and make them links */}
-                <Typography variant="h3" component="h3">Tests for {project ? project.title : ''} &gt; {story ? story.storyIdentifier + " " + story.title : ''}</Typography>
+                <Typography variant="h3" component="h3">Tests for <span style={{color: 'blue', cursor: 'pointer'}} onClick={() => navigate(`/projects/${project?.projectId}/stories`)}>{project ? project.title : ''}</span> &gt; {story ? story.storyIdentifier + " " + story.title : ''}</Typography>
                 <Button onClick={() => {setOpenAddTestDialog(true)}} startIcon={<AddIcon/>}>
                     Create new test
                 </Button>

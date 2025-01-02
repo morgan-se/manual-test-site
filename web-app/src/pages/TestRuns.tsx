@@ -1,4 +1,4 @@
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axios from "axios";
 import BASE_URL from "../util/url.ts";
@@ -22,6 +22,7 @@ const Tests = () => {
     const {projectId} = useParams();
     const {storyId} = useParams();
     const {testId} = useParams();
+    const navigate = useNavigate()
     const [project, setProject] = useState<Project>();
     const [story, setStory] = useState<Story>();
     const [test, setTest] = useState<Test>();
@@ -109,8 +110,12 @@ const Tests = () => {
         <>
             <Stack direction="row" spacing={2}>
                 {/* todo: highlight project and story name and make them links */}
-                <Typography variant="h3" component="h3">TestRuns for {project ? project.title : ''} &gt; {story ? story.storyIdentifier + " " + story.title : ''}  &gt; {test ? test.testIdentifier + " " + test.title : ''}</Typography>
-                <Button onClick={() => {setOpenAddTestRunDialog(true)}} startIcon={<AddIcon/>}>
+                <Typography variant="h3" component="h3">TestRuns for <span style={{color: 'blue', cursor: 'pointer'}}
+                                                                           onClick={() => navigate(`/projects/${project?.projectId}/stories`)}>{project ? project.title : ''}</span> &gt; <span style={{color: 'blue', cursor: 'pointer'}} onClick={() => navigate(`/projects/${project?.projectId}/stories/${story?.storyId}/tests`)}>{story ? story.storyIdentifier + " " + story.title : ''}</span>  &gt; {test ? test.testIdentifier + " " + test.title : ''}
+                </Typography>
+                <Button onClick={() => {
+                    setOpenAddTestRunDialog(true)
+                }} startIcon={<AddIcon/>}>
                     Add run
                 </Button>
             </Stack>
