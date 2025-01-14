@@ -30,6 +30,7 @@ export default () => {
     require('../app/routes/test.routes')(app);
     require('../app/routes/test-run.routes')(app);
     require('../app/routes/images.routes')(app);
+    require('../app/routes/images-sheets.routes')(app);
 
     return app;
 }

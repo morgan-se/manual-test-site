@@ -39,13 +39,13 @@ const createImage = async (title: string, testResults: {testIdentifier: string, 
     testResults.forEach(({ testIdentifier, status }, index) => {
         // Set color based on test result
         let symbol;
-        if(status === "pass") {
+        if(status === "pass" || status === "p") {
             ctx.fillStyle = 'green';
             symbol = tickSymbol;
-        } else if (status === "fail") {
+        } else if (status === "fail" || status === "f") {
             ctx.fillStyle = 'red';
             symbol = crossSymbol;
-        } else if (status === "error") {
+        } else if (status === "error" || status === "e") {
             ctx.fillStyle = 'orange';
             symbol = warningSymbol;
         } else {
